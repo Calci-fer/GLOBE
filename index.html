@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>GLOBE — Explore Every Country, Culture & People on Earth</title>
+<meta name="description" content="Discover every country on Earth — flags, cultures, people, capitals, tourist spots, languages, and unique facts. Explore all 195 countries grouped by continent."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#home">
+      <span class="logo-globe">🌍</span>
+      <span class="logo-text">GLOBE</span>
+    </a>
+    <div class="search-wrapper">
+      <span class="search-icon">🔍</span>
+      <input class="search-input" id="globalSearch" type="text" placeholder="Search any country, capital or language…" autocomplete="off"/>
+      <button class="search-clear" id="searchClear" aria-label="Clear search">✕</button>
+    </div>
+    <div class="nav-links">
+      <a href="#africa">Africa</a>
+      <a href="#asia">Asia</a>
+      <a href="#europe">Europe</a>
+      <a href="#north-america">Americas</a>
+      <a href="#oceania">Oceania</a>
+      <a href="#antarctica">Antarctica</a>
+      <a href="solar-system.html" style="background:linear-gradient(135deg,rgba(124,106,240,0.15),rgba(79,195,247,0.1));border:1px solid rgba(124,106,240,0.3);">🪐 Solar System</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#africa" onclick="closeMobileMenu()">🌍 Africa</a>
+    <a href="#asia" onclick="closeMobileMenu()">🌏 Asia</a>
+    <a href="#europe" onclick="closeMobileMenu()">🏰 Europe</a>
+    <a href="#north-america" onclick="closeMobileMenu()">🌎 Americas</a>
+    <a href="#oceania" onclick="closeMobileMenu()">🏝️ Oceania</a>
+    <a href="#antarctica" onclick="closeMobileMenu()">🧊 Antarctica</a>
+    <a href="solar-system.html" onclick="closeMobileMenu()">🪐 Solar System</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="stars" id="starsContainer"></div>
+  <div class="hero-content">
+    <div class="hero-globe" id="heroGlobe">🌍</div>
+    <h1 class="hero-title">Explore <span class="gradient-text">Every Corner</span><br/>of Our World</h1>
+    <p class="hero-subtitle">195 countries • 7 continents • Every flag, culture, language &amp; wonder</p>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">195</span><span class="stat-label">Countries</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">7</span><span class="stat-label">Continents</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">7,000+</span><span class="stat-label">Languages</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">8B</span><span class="stat-label">People</span></div>
+    </div>
+    <a class="hero-cta" href="#africa">Begin Exploring ↓</a>
+  </div>
+  <div class="hero-scroll-hint">Scroll to explore</div>
+</section>
+
+<!-- SEARCH RESULTS -->
+<section class="search-results-section" id="searchResultsSection" style="display:none;">
+  <div class="container">
+    <h2 class="section-search-title">Search Results for: <span id="searchTermDisplay"></span></h2>
+    <div class="country-grid" id="searchResultsGrid"></div>
+    <p class="no-results" id="noResults" style="display:none;">No countries found. Try a different search term.</p>
+  </div>
+</section>
+
+<!-- CONTINENTS -->
+<main id="mainContent">
+
+  <!-- AFRICA -->
+  <section class="continent-section" id="africa" data-continent="Africa">
+    <div class="continent-hero africa-hero">
+      <div class="continent-overlay"></div>
+      <div class="continent-hero-content">
+        <div class="continent-emoji">🌍</div>
+        <h2 class="continent-name">Africa</h2>
+        <p class="continent-tagline">The Cradle of Humanity</p>
+        <div class="continent-meta">
+          <span>🗺️ 30.37M km²</span>
+          <span>👥 1.4 Billion</span>
+          <span>🏳️ 54 Countries</span>
+          <span>🗣️ 2,000+ Languages</span>
+        </div>
+      </div>
+    </div>
+    <div class="continent-facts-bar">
+      <div class="container">
+        <div class="continent-description" id="desc-africa"></div>
+        <div class="facts-scroll" id="facts-africa"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="country-grid" id="grid-africa"></div>
+    </div>
+  </section>
+
+  <!-- ASIA -->
+  <section class="continent-section" id="asia" data-continent="Asia">
+    <div class="continent-hero asia-hero">
+      <div class="continent-overlay"></div>
+      <div class="continent-hero-content">
+        <div class="continent-emoji">🌏</div>
+        <h2 class="continent-name">Asia</h2>
+        <p class="continent-tagline">The Land of Ancient Civilizations</p>
+        <div class="continent-meta">
+          <span>🗺️ 44.58M km²</span>
+          <span>👥 4.7 Billion</span>
+          <span>🏳️ 49 Countries</span>
+          <span>🗣️ 2,300+ Languages</span>
+        </div>
+      </div>
+    </div>
+    <div class="continent-facts-bar">
+      <div class="container">
+        <div class="continent-description" id="desc-asia"></div>
+        <div class="facts-scroll" id="facts-asia"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="country-grid" id="grid-asia"></div>
+    </div>
+  </section>
+
+  <!-- EUROPE -->
+  <section class="continent-section" id="europe" data-continent="Europe">
+    <div class="continent-hero europe-hero">
+      <div class="continent-overlay"></div>
+      <div class="continent-hero-content">
+        <div class="continent-emoji">🏰</div>
+        <h2 class="continent-name">Europe</h2>
+        <p class="continent-tagline">The Old World</p>
+        <div class="continent-meta">
+          <span>🗺️ 10.53M km²</span>
+          <span>👥 748 Million</span>
+          <span>🏳️ 44 Countries</span>
+          <span>🗣️ 200+ Languages</span>
+        </div>
+      </div>
+    </div>
+    <div class="continent-facts-bar">
+      <div class="container">
+        <div class="continent-description" id="desc-europe"></div>
+        <div class="facts-scroll" id="facts-europe"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="country-grid" id="grid-europe"></div>
+    </div>
+  </section>
+
+  <!-- NORTH AMERICA -->
+  <section class="continent-section" id="north-america" data-continent="North America">
+    <div class="continent-hero north-america-hero">
+      <div class="continent-overlay"></div>
+      <div class="continent-hero-content">
+        <div class="continent-emoji">🌎</div>
+        <h2 class="continent-name">North America</h2>
+        <p class="continent-tagline">The Land of Opportunity</p>
+        <div class="continent-meta">
+          <span>🗺️ 24.71M km²</span>
+          <span>👥 600 Million</span>
+          <span>🏳️ 23 Countries</span>
+          <span>🗣️ Ancient to Modern</span>
+        </div>
+      </div>
+    </div>
+    <div class="continent-facts-bar">
+      <div class="container">
+        <div class="continent-description" id="desc-north-america"></div>
+        <div class="facts-scroll" id="facts-north-america"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="country-grid" id="grid-north-america"></div>
+    </div>
+  </section>
+
+  <!-- SOUTH AMERICA -->
+  <section class="continent-section" id="south-america" data-continent="South America">
+    <div class="continent-hero south-america-hero">
+      <div class="continent-overlay"></div>
+      <div class="continent-hero-content">
+        <div class="continent-emoji">🌎</div>
+        <h2 class="continent-name">South America</h2>
+        <p class="continent-tagline">The Continent of Wonders</p>
+        <div class="continent-meta">
+          <span>🗺️ 17.84M km²</span>
+          <span>👥 435 Million</span>
+          <span>🏳️ 12 Countries</span>
+          <span>🗣️ Passionately Diverse</span>
+        </div>
+      </div>
+    </div>
+    <div class="continent-facts-bar">
+      <div class="container">
+        <div class="continent-description" id="desc-south-america"></div>
+        <div class="facts-scroll" id="facts-south-america"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="country-grid" id="grid-south-america"></div>
+    </div>
+  </section>
+
+  <!-- OCEANIA -->
+  <section class="continent-section" id="oceania" data-continent="Oceania">
+    <div class="continent-hero oceania-hero">
+      <div class="continent-overlay"></div>
+      <div class="continent-hero-content">
+        <div class="continent-emoji">🏝️</div>
+        <h2 class="continent-name">Oceania</h2>
+        <p class="continent-tagline">The Pacific Paradise</p>
+        <div class="continent-meta">
+          <span>🗺️ 8.53M km²</span>
+          <span>👥 44 Million</span>
+          <span>🏳️ 14 Countries</span>
+          <span>🗣️ 1,300+ Languages</span>
+        </div>
+      </div>
+    </div>
+    <div class="continent-facts-bar">
+      <div class="container">
+        <div class="continent-description" id="desc-oceania"></div>
+        <div class="facts-scroll" id="facts-oceania"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="country-grid" id="grid-oceania"></div>
+    </div>
+  </section>
+
+  <!-- ANTARCTICA -->
+  <section class="continent-section" id="antarctica" data-continent="Antarctica">
+    <div class="continent-hero antarctica-hero">
+      <div class="continent-overlay"></div>
+      <div class="continent-hero-content">
+        <div class="continent-emoji">🧊</div>
+        <h2 class="continent-name">Antarctica</h2>
+        <p class="continent-tagline">The Frozen Frontier</p>
+        <div class="continent-meta">
+          <span>🗺️ 14.2M km²</span>
+          <span>👥 ~5,000 researchers</span>
+          <span>🏳️ No Countries (54 treaty signatories)</span>
+          <span>❄️ Earth's Last Wilderness</span>
+        </div>
+      </div>
+    </div>
+    <div class="continent-facts-bar">
+      <div class="container">
+        <div class="continent-description" id="desc-antarctica"></div>
+        <div class="facts-scroll" id="facts-antarctica"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="country-grid" id="grid-antarctica"></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">🌍 <strong>GLOBE</strong></div>
+    <p class="footer-tagline">Every country, every culture, every wonder — in one place.</p>
+    <div class="footer-stats">
+      <span>195 Countries</span> · <span>7 Continents</span> · <span>7,000+ Languages</span> · <span>8 Billion People</span> · <a href="solar-system.html" style="color:inherit;text-decoration:none;">🪐 Solar System</a>
+    </div>
+    <p class="footer-credit">Data sourced from public knowledge. Photos via Unsplash. Flags via flagcdn.com</p>
+  </div>
+</footer>
+
+<!-- COUNTRY MODAL -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Country Detail">
+  <div class="modal-card" id="modalCard">
+    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+    <div class="modal-header" id="modalHeader">
+      <div class="modal-flag-wrap">
+        <img class="modal-flag" id="modalFlag" src="" alt=""/>
+      </div>
+      <div class="modal-header-info">
+        <div class="modal-continent-badge" id="modalContinentBadge"></div>
+        <h2 class="modal-country-name" id="modalName"></h2>
+        <p class="modal-capital" id="modalCapital"></p>
+        <div class="modal-quick-stats" id="modalQuickStats"></div>
+      </div>
+    </div>
+    <div class="modal-photo-wrap">
+      <img class="modal-photo" id="modalPhoto" src="" alt="" loading="lazy"/>
+      <div class="modal-photo-overlay"></div>
+    </div>
+    <div class="modal-body" id="modalBody">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- DATA SCRIPTS -->
+<script src="continents.js"></script>
+<script src="africa.js"></script>
+<script src="asia.js"></script>
+<script src="europe.js"></script>
+<script src="americas.js"></script>
+<script src="oceania.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

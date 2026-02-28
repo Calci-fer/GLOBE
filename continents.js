@@ -1,0 +1,163 @@
+const CONTINENTS = [
+  {
+    name: "Africa",
+    code: "africa",
+    emoji: "🌍",
+    tagline: "The Cradle of Humanity",
+    area_km2: "30,370,000",
+    population: "1.4 Billion",
+    countries_count: 54,
+    capital_of_world: "Diverse & Vibrant",
+    accent_color: "#F4A261",
+    gradient: "linear-gradient(135deg, #F4A261, #E76F51)",
+    fun_facts: [
+      "Africa is the world's second-largest and second-most-populous continent.",
+      "It is home to the world's longest river, the Nile (6,650 km).",
+      "The Sahara Desert, the world's largest hot desert, covers much of North Africa.",
+      "Africa has the world's largest tropical rainforest — the Congo Basin.",
+      "More than 2,000 languages are spoken across Africa.",
+      "Africa contains the world's oldest human fossils, dating back 300,000+ years.",
+      "Mount Kilimanjaro in Tanzania is Africa's highest peak at 5,895 m."
+    ],
+    description: "Africa, the cradle of humanity, is a continent of breathtaking diversity — from the vast Sahara to dense rainforests, ancient civilizations to vibrant modern cities. With 54 countries, over 2,000 languages, and the world's youngest and fastest-growing population, Africa is the world's most dynamic continent.",
+    photo_query: "africa savanna wildlife"
+  },
+  {
+    name: "Antarctica",
+    code: "antarctica",
+    emoji: "🧊",
+    tagline: "The Frozen Continent",
+    area_km2: "14,200,000",
+    population: "~5,000 (researchers)",
+    countries_count: 0,
+    capital_of_world: "No permanent capital",
+    accent_color: "#A8DADC",
+    gradient: "linear-gradient(135deg, #A8DADC, #457B9D)",
+    fun_facts: [
+      "Antarctica holds about 70% of the world's fresh water as ice.",
+      "It is the coldest, driest, and windiest continent on Earth.",
+      "The lowest natural temperature ever recorded was −89.2°C in Antarctica.",
+      "No country owns Antarctica — it is governed by the Antarctic Treaty (1959).",
+      "Antarctica has no permanent human residents, only rotating research station staff.",
+      "Underneath the ice lies Lake Vostok, one of the world's largest lakes.",
+      "Penguins are the continent's most iconic residents."
+    ],
+    description: "Antarctica is Earth's southernmost and coldest continent, entirely covered by an ice sheet averaging 1.9 km thick. It has no indigenous human population and is governed internationally. It is a vital scientific frontier for climate research, astronomy, and geology.",
+    photo_query: "antarctica ice landscape penguin"
+  },
+  {
+    name: "Asia",
+    code: "asia",
+    emoji: "🌏",
+    tagline: "The Land of Ancient Civilizations",
+    area_km2: "44,579,000",
+    population: "4.7 Billion",
+    countries_count: 49,
+    capital_of_world: "Diverse & Ancient",
+    accent_color: "#E63946",
+    gradient: "linear-gradient(135deg, #E63946, #C1121F)",
+    fun_facts: [
+      "Asia is the largest continent, covering about 30% of Earth's land area.",
+      "Home to the world's highest peak — Mount Everest (8,849 m).",
+      "Asia has the two most populous countries: China and India.",
+      "The world's oldest civilizations emerged in Asia: Mesopotamia, Indus Valley, and the Yellow River.",
+      "Asia produces more than 90% of the world's rice.",
+      "The Trans-Siberian Railway, the world's longest, spans 9,289 km across Asia.",
+      "More than 2,300 languages are spoken across Asia."
+    ],
+    description: "Asia is the world's largest and most populous continent, stretching from the Arctic in the north to the equator in the south. It is the birthplace of all major world religions and ancient civilizations. From the Himalayas to tropical beaches, from futuristic megacities to ancient temples — Asia is extraordinary in every way.",
+    photo_query: "asia temple landscape mountains"
+  },
+  {
+    name: "Europe",
+    code: "europe",
+    emoji: "🌍",
+    tagline: "The Old World",
+    area_km2: "10,530,000",
+    population: "748 Million",
+    countries_count: 44,
+    capital_of_world: "Rich in History",
+    accent_color: "#457B9D",
+    gradient: "linear-gradient(135deg, #457B9D, #1D3557)",
+    fun_facts: [
+      "Europe has 44 countries and is the second-smallest continent by area.",
+      "The EU is the world's largest single market economy.",
+      "Europe has the highest density of UNESCO World Heritage Sites.",
+      "The Vatican City in Rome is the world's smallest country.",
+      "Over 200 languages are spoken across Europe.",
+      "Europe gave birth to democracy, the Renaissance, the Industrial Revolution.",
+      "The Rhine, Danube, and Thames are among Europe's most iconic rivers."
+    ],
+    description: "Europe, the 'Old World', is a continent of extraordinary cultural heritage — from ancient Greek democracy to the Roman Empire, the Renaissance to the Industrial Revolution. Despite being small in area, Europe has shaped world history more than any other continent and remains one of the most visited regions on Earth.",
+    photo_query: "europe architecture historic city"
+  },
+  {
+    name: "North America",
+    code: "north-america",
+    emoji: "🌎",
+    tagline: "The Land of Opportunity",
+    area_km2: "24,709,000",
+    population: "600 Million",
+    countries_count: 23,
+    capital_of_world: "Culturally Blended",
+    accent_color: "#2A9D8F",
+    gradient: "linear-gradient(135deg, #2A9D8F, #264653)",
+    fun_facts: [
+      "North America is the third-largest continent by area.",
+      "It includes 23 countries and numerous territories.",
+      "The Amazon River delta begins in South America but drainage spans North America's geography.",
+      "The United States has the world's largest economy by nominal GDP.",
+      "The Great Lakes hold 21% of the world's fresh surface water.",
+      "North America was home to ancient civilizations like the Maya and Aztec.",
+      "Canada is the world's second-largest country by total area."
+    ],
+    description: "North America spans from the Arctic tundra of Canada and Alaska to the tropical beaches of the Caribbean and Central America. It is home to immense cultural diversity, natural wonders like the Grand Canyon and Niagara Falls, and some of the world's most influential nations.",
+    photo_query: "north america grand canyon mountains"
+  },
+  {
+    name: "Oceania",
+    code: "oceania",
+    emoji: "🌏",
+    tagline: "The Pacific Paradise",
+    area_km2: "8,525,989",
+    population: "44 Million",
+    countries_count: 14,
+    capital_of_world: "Island Wonders",
+    accent_color: "#06D6A0",
+    gradient: "linear-gradient(135deg, #06D6A0, #118AB2)",
+    fun_facts: [
+      "Oceania includes Australia, Melanesia, Micronesia, and Polynesia.",
+      "Australia is the only country that occupies an entire continent.",
+      "The Great Barrier Reef stretches 2,300 km — the world's largest reef system.",
+      "New Zealand was the first country to grant women the right to vote (1893).",
+      "Oceania is home to some of the world's most isolated cultures.",
+      "Papua New Guinea alone has over 800 distinct languages.",
+      "The Pacific Ocean surrounding Oceania is the world's largest ocean."
+    ],
+    description: "Oceania is a vast region of the Pacific Ocean comprising thousands of islands. From the ancient Aboriginal cultures of Australia to the seafaring Polynesian navigators, Oceania is rich in unique biodiversity, indigenous traditions, and stunning natural beauty.",
+    photo_query: "oceania australia great barrier reef"
+  },
+  {
+    name: "South America",
+    code: "south-america",
+    emoji: "🌎",
+    tagline: "The Continent of Wonders",
+    area_km2: "17,840,000",
+    population: "435 Million",
+    countries_count: 12,
+    capital_of_world: "Passionately Diverse",
+    accent_color: "#8338EC",
+    gradient: "linear-gradient(135deg, #8338EC, #3A0CA3)",
+    fun_facts: [
+      "South America is home to the Amazon Rainforest — the world's largest tropical forest.",
+      "The Amazon River carries more water than any other river on Earth.",
+      "The Andes Mountains form the world's longest continental mountain range.",
+      "Angel Falls in Venezuela is the world's highest uninterrupted waterfall (979 m).",
+      "South America has the world's highest navigable lake — Lake Titicaca.",
+      "Brazil is the world's largest Portuguese-speaking country.",
+      "The Galápagos Islands inspired Charles Darwin's theory of evolution."
+    ],
+    description: "South America is a continent of superlatives — the world's largest rainforest, highest waterfall, and longest mountain range are all here. With 12 countries, each boasting passionate cultures, rich biodiversity, ancient Inca and Aztec heritage, and stunning landscapes, South America is truly a land of wonders.",
+    photo_query: "south america amazon rainforest machu picchu"
+  }
+];

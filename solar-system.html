@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Solar System — GLOBE | Planets, Sun & Beyond</title>
+<meta name="description" content="Explore our Solar System — the Sun, all 8 planets, dwarf planets and key facts. Part of the GLOBE explorer."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="solar-system.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="ss-nav" id="ssNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <span>🌍</span>
+      <span class="logo-text">GLOBE</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">🌍 Earth</a>
+      <a href="#planets" class="active">🪐 Planets</a>
+      <a href="#dwarf-planets">⚫ Dwarf Planets</a>
+      <a href="#solar-overview">☀️ The Sun</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobileMenu()">🌍 Back to Earth</a>
+    <a href="#solar-overview" onclick="closeMobileMenu()">☀️ The Sun</a>
+    <a href="#planets" onclick="closeMobileMenu()">🪐 Planets</a>
+    <a href="#dwarf-planets" onclick="closeMobileMenu()">⚫ Dwarf Planets</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="ss-hero" id="home">
+  <div class="stars-bg" id="starsBg"></div>
+  <div class="ss-hero-content">
+    <div class="hero-system-icon">🌌</div>
+    <h1 class="ss-hero-title">Our <span class="gradient-text">Solar System</span></h1>
+    <p class="ss-hero-sub">1 Star · 8 Planets · 5 Dwarf Planets · 290+ Moons · Billions of Asteroids</p>
+    <div class="ss-hero-stats">
+      <div class="hstat"><span class="hstat-n">4.6B</span><span class="hstat-l">Years Old</span></div>
+      <div class="hstat-div"></div>
+      <div class="hstat"><span class="hstat-n">8</span><span class="hstat-l">Planets</span></div>
+      <div class="hstat-div"></div>
+      <div class="hstat"><span class="hstat-n">290+</span><span class="hstat-l">Moons</span></div>
+      <div class="hstat-div"></div>
+      <div class="hstat"><span class="hstat-n">4.5 ly</span><span class="hstat-l">Nearest Star</span></div>
+    </div>
+    <a class="ss-cta" href="#solar-overview">Begin Journey ↓</a>
+  </div>
+  <div class="orbit-animation" id="orbitAnim"></div>
+</section>
+
+<!-- KEY FACTS BAR -->
+<section class="facts-bar-section">
+  <div class="facts-bar-inner" id="keyFactsBar"></div>
+</section>
+
+<!-- THE SUN -->
+<section class="sun-section" id="solar-overview">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-emoji">☀️</div>
+      <h2 class="section-title">The Sun</h2>
+      <p class="section-sub">The Heart of Our Solar System</p>
+    </div>
+    <div class="sun-card" id="sunCard">
+      <div class="sun-visual">
+        <div class="sun-orb">☀️</div>
+        <div class="sun-corona"></div>
+      </div>
+      <div class="sun-info">
+        <div class="sun-type-badge">G-type Main-Sequence Star</div>
+        <h3 class="sun-name">The Sun</h3>
+        <p class="sun-desc" id="sunDesc"></p>
+        <div class="sun-stats" id="sunStats"></div>
+        <button class="btn-detail" id="btnSunDetail">Explore the Sun →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANETS -->
+<section class="planets-section" id="planets">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-emoji">🪐</div>
+      <h2 class="section-title">The 8 Planets</h2>
+      <p class="section-sub">From scorching Mercury to frozen Neptune — ordered by distance from the Sun</p>
+    </div>
+    <div class="orbit-legend">
+      <span class="legend-item"><span class="legend-dot rocky"></span>Terrestrial (Rocky)</span>
+      <span class="legend-item"><span class="legend-dot gas"></span>Gas Giants</span>
+      <span class="legend-item"><span class="legend-dot ice"></span>Ice Giants</span>
+    </div>
+    <div class="planets-grid" id="planetsGrid"></div>
+  </div>
+</section>
+
+<!-- SOLAR SYSTEM SCALE -->
+<section class="scale-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-emoji">📐</div>
+      <h2 class="section-title">Size Comparison</h2>
+      <p class="section-sub">Relative sizes of the Sun versus all planets (not to exact scale — sizes are logarithmic for visibility)</p>
+    </div>
+    <div class="size-compare" id="sizeCompare"></div>
+  </div>
+</section>
+
+<!-- DWARF PLANETS -->
+<section class="dwarf-section" id="dwarf-planets">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-emoji">⚫</div>
+      <h2 class="section-title">Dwarf Planets</h2>
+      <p class="section-sub">The "almost planets" — fascinating worlds beyond Neptune and in the Asteroid Belt</p>
+    </div>
+    <div class="dwarf-grid" id="dwarfGrid"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ss-footer">
+  <div class="footer-inner">
+    <a class="footer-logo" href="index.html">🌍 <strong>GLOBE</strong></a>
+    <p class="footer-tagline">From our planet to the Solar System — every world explored.</p>
+    <p class="footer-credit">Data sourced from NASA, ESA, and public astronomical knowledge.</p>
+  </div>
+</footer>
+
+<!-- DETAIL MODAL -->
+<div class="ss-modal-overlay" id="ssModal">
+  <div class="ss-modal-card" id="ssModalCard">
+    <button class="ss-modal-close" id="ssModalClose">✕</button>
+    <div class="ss-modal-header" id="ssModalHeader">
+      <div class="ss-planet-orb" id="ssModalOrb"></div>
+      <div class="ss-modal-header-info">
+        <div class="ss-modal-type" id="ssModalType"></div>
+        <h2 class="ss-modal-name" id="ssModalName"></h2>
+        <p class="ss-modal-tagline" id="ssModalTagline"></p>
+        <div class="ss-modal-quick" id="ssModalQuick"></div>
+      </div>
+    </div>
+    <div class="ss-modal-body" id="ssModalBody"></div>
+  </div>
+</div>
+
+<script src="ssolar-system.js"></script>
+<script src="solar-system.js"></script>
+</body>
+</html>
